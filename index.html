@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Convert money</title>
+
+
+</head>
+
+<body>
+    <div class="logo">
+        <img src="assets/ícone de custos.png">
+
+    </div>
+
+    <main>
+
+        <label>
+            Converter <b>de</b>
+            <select>
+                <option> R$ real brasileiro</option>
+            </select>
+        </label>
+        <label>
+            Converter <b>para</b>
+            <select class="currency-select">
+                <option value="usd">U$$ Dólar americano</option>
+                <option value="eur">€ Euro</option>
+            </select>
+        </label>
+
+        <label>
+
+            valor
+            <input type="number" id="valor">
+
+        </label>
+
+        <div>
+            <button id="btn">Enviar</button>
+
+        </div>
+
+        <section class="bandeiras">
+
+            <div class="currency-box">
+                <img src="assets/brasil 2.png" alt="brasil">
+                <p>Real</p>
+                <p id="valueReal">0,00</p>
+
+            </div>
+            <img src="assets/Vector (5).png" alt="seta">
+
+            <div class="currency-box">
+                <img src="assets/estados-unidos (1) 1.png" alt="money" id="currency-flag">
+                <p id="currency-name">Dólar</p>
+                <p id="resultado">US$ 0.00</p>
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </main>
+
+
+
+</body>
+<script src="./scripts.js" defer></script>
+<script> alert(" ola java ");</script>
+
+</html>
