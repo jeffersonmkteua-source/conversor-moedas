@@ -28,21 +28,25 @@
                 <option> R$ real brasileiro</option>
             </select>
         </label>
-        <label>
-            Converter <b>para</b>
-            <select class="currency-select">
-                <option value="usd">U$$ Dólar americano</option>
-                <option value="eur">€ Euro</option>
-            </select>
-        </label>
+     <label>
+    Converter <b>para</b>
+    <select class="currency-select">
+        <option value="usd">US$ Dólar americano</option>
+        <option value="eur">€ Euro</option>
+    </select>
+</label>
 
-        <label>
+<label for="valor">
+    Valor em reais (R$)
+</label>
 
-            valor
-            <input type="number" id="valor">
-
-        </label>
-
+<input
+    type="number"
+    id="valor"
+    min="0"
+    step="0.01"
+    placeholder="Digite o valor"
+>
         <div>
             <button id="btn">Enviar</button>
 
