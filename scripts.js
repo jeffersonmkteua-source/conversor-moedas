@@ -8,8 +8,31 @@ const currencySelect = document.querySelector(".currency-select")
 const currencyFlag = document.getElementById("currency-flag")
 const currencyName = document.getElementById("currency-name")
 
-const dolarHoje = 5.2
-const euroHoje = 5.6
+let dolarHoje = 0
+let euroHoje = 0
+// Busca as cotações atualizadas na API
+async function buscarCotacoes() {
+    try {
+        const resposta = await fetch(
+            "https://api.frankfurter.dev/v1/latest?base=BRL&symbols=USD,EUR"
+        )
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível buscar as cotações.")
+        }
+
+        const dados = await resposta.json()
+
+        dolarHoje = 1 / dados.rates.USD
+        euroHoje = 1 / dados.rates.EUR
+
+        convertValues()
+
+    } catch (erro) {
+        console.error("Erro ao buscar cotações:", erro)
+        resultado.innerText = "Cotação indisponível"
+    }
+}
 
 // Atualiza valor em real enquanto digita
 inputValor.addEventListener("input", () => {
@@ -32,6 +55,11 @@ currencySelect.addEventListener("change", changeCurrency)
 // Função principal de conversão
 function convertValues() {
     const valorReal = Number(inputValor.value)
+
+    if (!dolarHoje || !euroHoje) {
+        resultado.innerText = "Carregando cotação..."
+        return
+    }
 
     if (!valorReal) {
         resultado.innerText = "—"
@@ -71,5 +99,7 @@ function changeCurrency() {
 
     convertValues()
 }
+// Carrega as cotações ao abrir a página
+buscarCotacoes()
 
 
