@@ -10,6 +10,7 @@ const currencyName = document.getElementById("currency-name")
 
 let dolarHoje = 0
 let euroHoje = 0
+let cotacaoCarregada = false
 // Busca as cotações atualizadas na API
 async function buscarCotacoes() {
     try {
