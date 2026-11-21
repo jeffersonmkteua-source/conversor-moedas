@@ -23,6 +23,7 @@ async function buscarCotacoes() {
         }
 
               const dados = await resposta.json()
+        cotacaoCarregada = true
 
 const dataCotacao = document.getElementById("data-cotacao")
 
