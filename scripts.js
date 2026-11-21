@@ -23,8 +23,9 @@ async function buscarCotacoes() {
 
               const dados = await resposta.json()
 
-     dataCotacao.innerText = `Cotação referente a: ${new Date(dados.date + "T12:00:00").toLocaleDateString("pt-BR")}`
+const dataCotacao = document.getElementById("data-cotacao")
 
+dataCotacao.innerText = `Cotação referente a: ${new Date(dados.date + "T12:00:00").toLocaleDateString("pt-BR")}`
         dolarHoje = 1 / dados.rates.USD
         euroHoje = 1 / dados.rates.EUR
 
