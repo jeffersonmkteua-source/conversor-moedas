@@ -32,11 +32,14 @@ dataCotacao.innerText = `Cotação referente a: ${new Date(dados.date + "T12:00:
         euroHoje = 1 / dados.rates.EUR
 
         convertValues()
+} catch (erro) {
+    cotacaoCarregada = false
+    dolarHoje = 0
+    euroHoje = 0
 
-    } catch (erro) {
-        console.error("Erro ao buscar cotações:", erro)
-        resultado.innerText = "Cotação indisponível"
-    }
+    console.error("Erro ao buscar cotações:", erro)
+    resultado.innerText = "Cotação indisponível"
+}
 }
 
 // Atualiza valor em real enquanto digita
