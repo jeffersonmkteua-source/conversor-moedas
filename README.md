@@ -1,35 +1,36 @@
 
 # 💱 Conversor de Moedas
 
-Projeto desenvolvido com **HTML, CSS e JavaScript** para realizar conversões entre Real (BRL), Dólar (USD) e Euro (EUR).
+Projeto desenvolvido para realizar conversões de valores em reais (BRL) para dólar americano (USD) e euro (EUR), utilizando cotações obtidas por meio de uma API externa.
 
-## 🌐 Demonstração online
+## 🚀 Demonstração
 
-Acesse e teste o projeto: [Conversor de Moedas](https://jeffersonmkteua-source.github.io/conversor-moedas/)
+[Acessar o Conversor de Moedas](https://jeffersonmkteua-source.github.io/conversor-moedas/)
 
-## 🚀 Funcionalidades
+## ✨ Funcionalidades
 
-- Conversão de Real para Dólar e Euro.
-- Atualização dinâmica dos valores.
-- Troca de bandeiras conforme a moeda selecionada.
-- Formatação internacional dos valores monetários.
+- Conversão de Real para Dólar.
+- Conversão de Real para Euro.
+- Consulta de cotações por API.
+- Exibição da data da cotação utilizada.
+- Atualização do resultado ao digitar ou trocar a moeda.
+- Formatação dos valores monetários.
 
 ## 🛠️ Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
+- API Frankfurter
 
 ## 🎯 Objetivo
 
-Praticar conceitos de desenvolvimento web, manipulação de elementos da página com JavaScript e apresentação de valores monetários.
+Praticar desenvolvimento web, manipulação do DOM, consumo de APIs, funções assíncronas e tratamento de erros com JavaScript.
 
 ## 👨‍💻 Desenvolvedor
 
 **Jefferson Santos**
 
-- [GitHub](https://github.com/jeffersonmkteua-source)
+[GitHub](https://github.com/jeffersonmkteua-source)
 
----
-
-Projeto desenvolvido durante minha jornada de aprendizado em desenvolvimento web.
+[Portfólio](https://jeffersonsantosdesouza.netlify.app/)
