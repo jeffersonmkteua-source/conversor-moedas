@@ -64,10 +64,10 @@ currencySelect.addEventListener("change", changeCurrency)
 function convertValues() {
     const valorReal = Number(inputValor.value)
 
-    if (!dolarHoje || !euroHoje) {
-        resultado.innerText = "Carregando cotação..."
-        return
-    }
+   if (!cotacaoCarregada) {
+    resultado.innerText = "Cotação indisponível"
+    return
+}
 
     if (!valorReal) {
         resultado.innerText = "—"
