@@ -10,7 +10,7 @@ const currencyName = document.getElementById("currency-name")
 
 let dolarHoje = 0
 let euroHoje = 0
-let cotacaoCarregada = false
+let statusCotacao = "carregando"
 // Busca as cotações atualizadas na API
 async function buscarCotacoes() {
     try {
@@ -22,18 +22,19 @@ async function buscarCotacoes() {
             throw new Error("Não foi possível buscar as cotações.")
         }
 
-              const dados = await resposta.json()
-        cotacaoCarregada = true
+          const dados = await resposta.json()
+
 
 const dataCotacao = document.getElementById("data-cotacao")
 
 dataCotacao.innerText = `Cotação referente a: ${new Date(dados.date + "T12:00:00").toLocaleDateString("pt-BR")}`
         dolarHoje = 1 / dados.rates.USD
         euroHoje = 1 / dados.rates.EUR
+        statusCotacao = "sucesso"
 
         convertValues()
 } catch (erro) {
-    cotacaoCarregada = false
+    statusCotacao = "erro"
     dolarHoje = 0
     euroHoje = 0
 
@@ -64,7 +65,12 @@ currencySelect.addEventListener("change", changeCurrency)
 function convertValues() {
     const valorReal = Number(inputValor.value)
 
-   if (!cotacaoCarregada) {
+  if (statusCotacao === "carregando") {
+    resultado.innerText = "Carregando cotação..."
+    return
+}
+
+if (statusCotacao === "erro") {
     resultado.innerText = "Cotação indisponível"
     return
 }
