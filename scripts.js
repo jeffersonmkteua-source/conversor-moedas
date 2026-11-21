@@ -21,7 +21,10 @@ async function buscarCotacoes() {
             throw new Error("Não foi possível buscar as cotações.")
         }
 
-        const dados = await resposta.json()
+              const dados = await resposta.json()
+
+        const dataCotacao = document.getElementById("data-cotacao")
+        dataCotacao.innerText = `Cotação referente a: ${dados.date}`
 
         dolarHoje = 1 / dados.rates.USD
         euroHoje = 1 / dados.rates.EUR
